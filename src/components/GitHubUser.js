@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useFetch from '../hooks/useFetch';
+import Fetch from './Fetch';
 
 const GitHubUser = ({ login }) => {
-  const { loading, data, error } = useFetch(
-    `https://api.github.com/users/${login}`
+  return (
+    <Fetch
+      uri={`https://api.github.com/users/${login}`}
+      renderSuccess={UserDetails}
+      renderError={(error) => {
+        return <p>Something went wrong... {error.message}</p>;
+      }}
+    />
   );
+};
 
-  if (loading) return <h1>loading...</h1>;
-  if (error) {
-    return <pre>{JSON.stringify(error, null, 2)}</pre>;
-  }
-
+const UserDetails = ({ data }) => {
   return (
     <div className="gitHubUser">
       <img src={data.avatar_url} alt={data.login} style={{ width: 200 }} />
@@ -26,6 +29,10 @@ const GitHubUser = ({ login }) => {
 
 GitHubUser.propTypes = {
   login: PropTypes.string,
+};
+
+UserDetails.propTypes = {
+  data: PropTypes.object,
 };
 
 export default GitHubUser;
