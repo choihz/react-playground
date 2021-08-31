@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Star from './components/Star';
+import Windowing from './components/Windowing';
 
 const App = () => {
-  return <Star />;
+  return <Windowing />;
 };
 
 ReactDOM.render(
