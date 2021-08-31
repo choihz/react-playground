@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Windowing from './components/Windowing';
+import GitHubUser from './components/GitHubUser';
 
 const App = () => {
-  return <Windowing />;
+  return <GitHubUser login="choihz" />;
 };
 
 ReactDOM.render(
