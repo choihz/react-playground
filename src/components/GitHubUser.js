@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Fetch from './Fetch';
+import UserDetails from './UserDetails';
 
 const GitHubUser = ({ login }) => {
   return (
@@ -14,25 +15,8 @@ const GitHubUser = ({ login }) => {
   );
 };
 
-const UserDetails = ({ data }) => {
-  return (
-    <div className="gitHubUser">
-      <img src={data.avatar_url} alt={data.login} style={{ width: 200 }} />
-      <div>
-        <h1>{data.login}</h1>
-        {data.name && <p>{data.name}</p>}
-        {data.location && <p>{data.location}</p>}
-      </div>
-    </div>
-  );
-};
-
 GitHubUser.propTypes = {
   login: PropTypes.string,
-};
-
-UserDetails.propTypes = {
-  data: PropTypes.object,
 };
 
 export default GitHubUser;
