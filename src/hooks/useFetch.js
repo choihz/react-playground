@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 const useFetch = (uri) => {
   const [data, setData] = useState();
@@ -21,10 +20,6 @@ const useFetch = (uri) => {
     data,
     error,
   };
-};
-
-useFetch.propTypes = {
-  uri: PropTypes.string,
 };
 
 export default useFetch;
