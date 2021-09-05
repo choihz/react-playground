@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { FaStar } from 'react-icons/fa';
 
 const Star = ({ selected = false }) => {
-  return <FaStar color={selected ? 'red' : 'grey'} id="star" />;
+  return (
+    <>
+      <h1>Great Star</h1>
+      <FaStar color={selected ? 'red' : 'grey'} id="star" />
+    </>
+  );
 };
 
 Star.propTypes = {
