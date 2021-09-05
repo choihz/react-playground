@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  text-align: center;
+`;
 
 const App = () => {
-  return <div>안녕</div>;
+  return <Container>안녕</Container>;
 };
 
 ReactDOM.render(
