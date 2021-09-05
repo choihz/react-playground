@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UserRepositories from './UserRepositories';
 
 const UserDetails = ({ data }) => {
   return (
@@ -11,10 +10,6 @@ const UserDetails = ({ data }) => {
         {data.name && <p>{data.name}</p>}
         {data.location && <p>{data.location}</p>}
       </div>
-      <UserRepositories
-        login={data.login}
-        onSelect={(repoName) => console.log(`${repoName} selected`)}
-      />
     </div>
   );
 };
